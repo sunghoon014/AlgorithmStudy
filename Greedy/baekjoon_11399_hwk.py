@@ -1,4 +1,4 @@
-# 그냥 소요 순서대로 정렬하면 끝인 문제
+# 그냥 소요시간 순서대로 정렬하면 끝인 문제
 N = int(input())
 Ps = list(map(int, input().split()))
 Ps.sort()
