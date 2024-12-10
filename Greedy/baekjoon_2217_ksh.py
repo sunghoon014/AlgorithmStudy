@@ -28,11 +28,18 @@ lst = [int(input()) for _ in range(n)]
 lst.sort()
 print(lst)
 
+lst : [10, 12, 15]
+
 # max_c = 0
 # for l in lst:
+    10
+    10, 12, 15
+    True True True
+    
 #     _lst = [l <= x for x in lst]
 #     # print(_lst, sum(_lst))
 #     c = l * sum(_lst)
+
 #     max_c = max(max_c, c)
 # print(max_c)
 
