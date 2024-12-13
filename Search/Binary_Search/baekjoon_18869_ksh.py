@@ -15,6 +15,15 @@ for _ in range(M):
         result_dic[str(n_idx)] += 1
     except:
         result_dic[str(n_idx)] = 0
+print(result_dic)
+
+# 1 2 3
+# 2 3 4
+# 4 5 6
+
+# 9 8 7
+# 8 7 6
+
 
 result = 0
 for k, v in result_dic.items():
