@@ -24,3 +24,6 @@ while True:
         break
 
 print(result)
+
+
+# x + y + z = k
