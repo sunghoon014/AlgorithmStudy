@@ -23,18 +23,18 @@ print(*answer)
 # 투 포인터
 N = int(input())
 liquids = list(map(int, input().split()))
-left, right = 0, N-1
-value = abs(liquids[left] + liquids[right])
-answer = (liquids[left], liquids[right])
-while left < right:
-    ph = liquids[left] + liquids[right]
+start, end = 0, N-1
+value = abs(liquids[start] + liquids[end])
+answer = (liquids[start], liquids[end])
+while start < end:
+    ph = liquids[start] + liquids[end]
     if value>abs(ph):   # 매 번 저장하지 않고 최소값 갱신할 때만 저장
         value = abs(ph)
-        answer = (liquids[left], liquids[right])
+        answer = (liquids[start], liquids[end])
         if value==0:
             break
     if ph>0:
-        right-=1
+        end-=1
     else:
-        left+=1
+        start+=1
 print(*answer)
