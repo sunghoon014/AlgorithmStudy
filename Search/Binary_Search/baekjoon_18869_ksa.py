@@ -1,6 +1,8 @@
 import sys
 from collections import defaultdict
+from math import comb
 from bisect import bisect_left
+
 input = sys.stdin.readline
 
 M, N = map(int, input().split())
@@ -8,26 +10,11 @@ pattern_count = defaultdict(int)
 
 for _ in range(M):
     planets = list(map(int, input().split()))
-
-    enum_planets = [(val, idx) for idx, val in enumerate(planets)]
-
-    sorted_vals = sorted(x[0] for x in enum_planets)
-    
-    pattern = [0] * N
-    prev_val = sorted_vals[0]
-    curr_rank = 0
-    
-    for val, idx in enum_planets:
-        pos = bisect_left(sorted_vals, val)
-
-        if val != prev_val:
-            curr_rank = pos
-            prev_val = val
-        pattern[idx] = curr_rank
-    
+    tmp = sorted(list(set(planets)))
+    pattern = [bisect_left(tmp, x) for x in planets]
     pattern_count[tuple(pattern)] += 1
 
-result = sum(count * (count - 1) // 2 for count in pattern_count.values())
+result = sum(comb(count, 2) for count in pattern_count.values())
 print(result)
 
 # import sys

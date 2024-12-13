@@ -4,15 +4,20 @@ input = sys.stdin.readline
 N = int(input())
 numbers = [int(input()) for _ in range(N)]
 
-numbers.sort(reverse=True)
+numbers.sort()
 
 possible = set()
+for i in numbers:
+    for j in numbers:
+        possible.add(i+j)
 
-for i in range(N):
-    for j in range(N):
-        for k in range(N):
-            sum = numbers[i] + numbers[j] + numbers[k]
-            if sum in numbers:
-                possible.add(sum)
-                
-print(max(possible))
+answer = None
+for i in range(N-1, -1, -1):
+    found = False
+    for j in range(i+1):
+        if numbers[i] - numbers[j] in possible:
+            answer = numbers[i]
+            found = True
+    if found: 
+        break
+print(answer)
