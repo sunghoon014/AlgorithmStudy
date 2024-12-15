@@ -66,7 +66,7 @@ def binary_search(num, left, right):
    mid = (left + right) // 2
    
    if num == A[mid]:
-       return True
+       retuqrn True
    elif num > A[mid]:
        return binary_search(num, mid + 1, right)
    else:
