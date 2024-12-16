@@ -31,4 +31,6 @@ while que:
 
 print(answer-1 if num_tomatos==0 else -1)
 
-# DFS
+# DFS 로는 풀 수 없음
+# 토마토가 익는 것은 근처에 있는 토마토들을 서서히 잠식해 나가는 방식이기 때문에
+# 깊이 우선 탐색인 DFS를 사용할 수 없음
