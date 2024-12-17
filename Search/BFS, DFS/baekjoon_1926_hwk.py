@@ -6,15 +6,15 @@ grid = [list(map(int, input().split())) for _ in range(N)]
 visited = [[0]*M for _ in range(N)]
 drs = [0, 0, -1, 1]
 dcs = [1, -1, 0, 0]
-num = 0
-max_size = 0
+num = 0 # 그림 개수
+max_size = 0    # 제일 큰 그림 크기기
 for init_r in range(N):
     for init_c in range(M):
         if visited[init_r][init_c] or not grid[init_r][init_c]: continue 	# 방문했으면 건너뛰기
         num += 1	# 그림 개수 추가
         que = deque([(init_r, init_c)])
         visited[init_r][init_c] = 1
-        size = 0
+        size = 0    # 그림 크기
         while que:
             r, c = que.popleft()
             size += 1
