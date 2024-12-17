@@ -10,7 +10,7 @@ start = 1
 end = l_lst[0]
 
 result = 0
-while start < end:
+while start <= end:
     mid = (start + end) // 2
     c = 0
     for l in l_lst:
