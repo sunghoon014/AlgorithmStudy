@@ -7,6 +7,7 @@ visited = [False]*n
 def dfs():
     if len(stack)==m:
         print(*stack)
+        return
     for i in range(n):
         if visited[i]:
             continue
