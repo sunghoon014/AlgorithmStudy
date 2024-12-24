@@ -7,11 +7,11 @@ N, C = map(int, input().split())
 M = int(input())
 packs = [list(map(int, input().split())) for _ in range(M)]
 packs.sort(key=lambda x:x[1])
-capacity = [C]*(N+1)    # 각 도시에서 트럭에 담긴 택배 수
+capacity = [C]*(N+1)    # 각 도시에서 트럭에 택배를 실을 수 있는 가용한 공간
 answer = 0
 for fr, to, num in packs:
     min_v = C   # 이 구간에서 이 택배 몇 개 실을지
-    # 도시를 돌면서 각 도시에서 남은 트럭 용량을 보면서 최대 몇 개 실을지 판단
+    # 도시를 돌면서 각 도시에서 남은 트럭 용량을 보면서 몇 개 실을지 판단
     for i in range(fr, to):
         temp = min(capacity[i], num)
         min_v = min(min_v, temp)
