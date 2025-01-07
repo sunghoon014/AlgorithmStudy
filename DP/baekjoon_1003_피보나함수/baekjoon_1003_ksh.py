@@ -1,3 +1,7 @@
+"""
+재귀함수 시간 초과 남
+"""
+
 import sys
 
 input = sys.stdin.readline
